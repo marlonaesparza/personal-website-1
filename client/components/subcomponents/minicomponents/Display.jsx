@@ -7,7 +7,6 @@ const Display = (props) => {
   const DisplayContainer = styled.div`
     margin: 0px;
     padding: 5px;
-    height: 100%;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     place-content: center;

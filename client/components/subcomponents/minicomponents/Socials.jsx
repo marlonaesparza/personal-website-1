@@ -9,7 +9,6 @@ const Socials = (props) => {
   const SocialsContainer = styled.div`
     margin: 0px;
     padding: 5px;
-    height: 100%;
   `;
 
   return (

@@ -9,7 +9,6 @@ const Repositories = (props) => {
   const ReposContainer = styled.div`
     margin: 0px;
     padding: 5px;
-    height: 100%;
   `;
 
   return (
