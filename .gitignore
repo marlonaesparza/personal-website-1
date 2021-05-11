@@ -1,0 +1,3 @@
+node_modules
+server/database/config.js
+server/api/config.js
