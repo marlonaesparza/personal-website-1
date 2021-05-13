@@ -19,7 +19,7 @@ const About = (props) => {
 
   return (
     <AboutContainer id='about-container'>
-      <Passage />
+      <Passage passage={passage} />
     </AboutContainer>
   );
 };
