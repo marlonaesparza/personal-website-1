@@ -37,8 +37,8 @@ class App extends React.Component {
       .then((resources) => {
         this.setState({
           content: 'home',
-          display: 'marlon',
-          passage: 'This is sample data.',
+          display: 'Marlon A. Esparza',
+          passage: resources.passage,
           repos: resources.repos,
           socials: resources.socials,
           contentOptions: ['home', 'about', 'projects', 'connect']

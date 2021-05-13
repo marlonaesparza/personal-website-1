@@ -16,13 +16,19 @@ const Passage = (props) => {
     color: white;
   `;
 
-  return (
+   return (
     <PassageContainer id='passage-container'>
-      <Passage>Marlon A. Esparza is a full-stack software engineer, with experience in deploying secure applications. His background in design and music production give him a creative edge for front-end development.</Passage>
-      <Passage>He is motivated by incredible design and functionality that make applications a great experience. He considers himself a life-long learner, proud to continue building a strong foundation in computer science and web development.</Passage>
-      <Passage>Marlon A. Esparza is currently looking for a full-time position with solid skills in html, css, front-end/back-end javascript, and relational/non-relational databases. Employers, please feel free to reach out if you believe he may be the right fit for your company, thank you.</Passage>
-      <br/>
-      <Passage>marlonaesparza@protonmail.com</Passage>
+      {
+        passage.map((paragraph, i) => {
+          if (i === passage.length - 1) {
+            return;
+          };
+
+          return <Passage key={i}>{paragraph}</Passage>;
+        })
+      }
+      <br/><br/>
+      <Passage key={passage.length - 1}>{passage[passage.length - 1 ]}</Passage>
     </PassageContainer>
   );
 };

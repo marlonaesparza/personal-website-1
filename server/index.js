@@ -2,9 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-const db = require('./database/connect');
-const socialsTable = require('./database/utils/socialsTable');
 const api = require('./api/utils/fetchRepos');
+const socials = require('./assets/socials.js');
+const passage = require('./assets/passage.js');
 
 const app = express();
 const port = 8080;
@@ -19,12 +19,10 @@ app.get('/', (req, res) => {
 
 app.get('/resources', (req, res) => {
   const resources = {};
+  resources.socials = socials;
+  resources.passage = passage;
 
-  return socialsTable.getAll(db)
-    .then((socials) => {
-      resources.socials = socials;
-      return api.fetchRepos();
-    })
+  return api.fetchRepos()
     .then((repos) => {
       resources.repos = repos;
       res.status(200).send(resources);
