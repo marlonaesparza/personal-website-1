@@ -4,7 +4,9 @@
   "main": "webpack.config.js",
   "scripts": {
     "start": "nodemon server/index.js",
-    "build": "webpack --watch"
+    "build": "webpack --watch",
+    "restart": "pm2 startOrRestart ecosystem.config.js",
+    "deploy": "pm2 deploy ecosystem.config.js production"
   },
   "author": "",
   "license": "ISC",
@@ -28,6 +30,7 @@
     "@babel/preset-react": "^7.13.13",
     "babel-loader": "^8.2.2",
     "babel-plugin-styled-components": "^1.12.0",
+    "pm2": "^4.5.6",
     "webpack": "^5.36.2",
     "webpack-cli": "^4.6.0"
   }
