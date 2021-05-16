@@ -22,14 +22,14 @@ const Repo = (props) => {
 
   const RepoTitle = styled.h3`
     margin: 0px;
-    padding: 5px;
+    padding: 0px 5px 0px 5px;
     color: white;
     align-self: center;
   `
 
   const RepoDescription = styled.p`
     margin: 0px;
-    padding: 5px;
+    padding: 0px 5px 0px 5px;
     display: block;
     color: white;
     align-self: center;
@@ -37,7 +37,7 @@ const Repo = (props) => {
 
   const RepoUrl = styled.a`
     margin: 0px;
-    padding: 5px;
+    padding: 5px 5px 10px 5px;
     display: block;
     color: white;
     cursor: grab;

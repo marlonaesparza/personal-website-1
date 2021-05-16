@@ -4,7 +4,10 @@ import styled from 'styled-components';
 import Repositories from './minicomponents/Repositories.jsx';
 
 const Projects = (props) => {
-  const { repos } = props;
+  const {
+    repos,
+    deviceAdjustment
+  } = props;
 
   const ProjectsContainer = styled.div`
     margin: auto;
@@ -15,6 +18,11 @@ const Projects = (props) => {
     border-radius: 3px;
     box-shadow: rgba(17, 26, 255, 0.3) 0px 8px 24px, rgba(17, 26, 255, 0.3) 0px 16px 56px, rgba(17, 26, 255, 0.3) 0px 24px 80px;
     overflow: auto;
+    font-size: 2vw;
+
+    @media ${deviceAdjustment.tablet} {
+      max-height: 60vh;
+    }
   `;
 
   return (

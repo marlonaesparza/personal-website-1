@@ -29,6 +29,7 @@ const Passage = (props) => {
       }
       <br/>
       <Passage key={passage.length - 1}>{passage[passage.length - 1 ]}</Passage>
+      <br/>
     </PassageContainer>
   );
 };

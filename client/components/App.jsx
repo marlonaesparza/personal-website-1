@@ -1,23 +1,32 @@
 import React from 'react';
 import styled from 'styled-components';
+import deviceAdjustment from '../assets/deviceAdjustment';
 
 import Content from './Content';
 import Navigation from './Navigation';
+import NavToggle from './NavToggle';
+import NavMenu from './NavMenu';
 
 const AppContainer = styled.div`
   margin: 0px;
   padding: 0px;
-  max-height: 100vh;
+  min-height: 100vh;
   display: grid;
-  grid-template-columns: 7fr 3fr;
+  grid-template-columns: 70% 30%;
   place-content: center;
+
+  @media ${deviceAdjustment.tablet} {
+    grid-template-columns: 100%;
+    grid-template-rows: 85% 15%;
+  }
 `;
 
 class App extends React.Component {
   constructor(props) {
-    super();
+    super(props);
     this.state = {
       content: '',
+      menu: false,
       display: '',
       passage: '',
       repos: [],
@@ -37,6 +46,7 @@ class App extends React.Component {
       .then((resources) => {
         this.setState({
           content: 'home',
+          menu: false,
           display: 'Marlon A. Esparza',
           passage: resources.passage,
           repos: resources.repos,
@@ -56,10 +66,16 @@ class App extends React.Component {
       contentOptions
     } = this.state;
 
+    const {
+      deviceAdjustment
+    } = this.props;
+
     return (
       <AppContainer id='application-container'>
-        <Content content={content} display={display} passage={passage} repos={repos} socials={socials} />
-        <Navigation contentOptions={contentOptions} handleNavigation={this.handleNavigation} />
+        <Content content={content} display={display} passage={passage} repos={repos} socials={socials} deviceAdjustment={deviceAdjustment} />
+        <Navigation contentOptions={contentOptions} deviceAdjustment={deviceAdjustment} handleNavigation={this.handleNavigation} />
+        <NavToggle deviceAdjustment={deviceAdjustment} />
+        <NavMenu deviceAdjustment={deviceAdjustment} />
       </AppContainer>
     );
   }

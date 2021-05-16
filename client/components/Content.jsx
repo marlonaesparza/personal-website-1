@@ -12,7 +12,8 @@ const Content = (props) => {
     display,
     passage, 
     repos,
-    socials
+    socials,
+    deviceAdjustment
   } = props;
 
   const ContentContainer = styled.div`
@@ -24,15 +25,20 @@ const Content = (props) => {
     grid-template-columns: repeat(1, 1fr);
     place-content: center;
     background: black;
+    border: none;
+
+    @media ${deviceAdjustment.tablet} {
+      min-height: 80vh;
+    }
   `;
 
   return (
     <ContentContainer id='content-container'>
       {
-        content === 'home' ? <Home display={display} /> : 
-        content === 'about' ? <About passage={passage} /> :
-        content === 'projects' ? <Projects repos={repos} /> :
-        content === 'connect' ? <Connect socials={socials} /> : null
+        content === 'home' ? <Home display={display} deviceAdjustment={deviceAdjustment} /> : 
+        content === 'about' ? <About passage={passage} deviceAdjustment={deviceAdjustment} /> :
+        content === 'projects' ? <Projects repos={repos} deviceAdjustment={deviceAdjustment} /> :
+        content === 'connect' ? <Connect socials={socials} deviceAdjustment={deviceAdjustment} /> : null
       }
     </ContentContainer>
   );

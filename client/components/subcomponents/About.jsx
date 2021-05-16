@@ -4,7 +4,10 @@ import styled from 'styled-components';
 import Passage from './minicomponents/Passage';
 
 const About = (props) => {
-  const { passage } = props;
+  const {
+    passage,
+    deviceAdjustment
+  } = props;
 
   const AboutContainer = styled.div`
     margin: auto;
@@ -15,6 +18,11 @@ const About = (props) => {
     border-radius: 3px;
     box-shadow: rgba(255, 255, 26, 0.3) 0px 8px 24px, rgba(255, 255, 26, 0.3) 0px 16px 56px, rgba(255, 255, 26, 0.3) 0px 24px 80px;
     overflow: auto;
+    font-size: 2vw;
+
+    @media ${deviceAdjustment.tablet} {
+      max-height: 60vh;
+    }
   `;
 
   return (
