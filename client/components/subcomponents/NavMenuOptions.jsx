@@ -8,7 +8,7 @@ const NavMenuOptions = (props) => {
   } = props;
 
   const NavOptionsContainer = styled.div`
-    margin: 0px;
+    margin: auto;
     padding: 0px;
     display: grid;
     grid-template-rows: repeat(${contentOptions.length}, 1fr);
@@ -17,7 +17,7 @@ const NavMenuOptions = (props) => {
 
   const NavOption = styled.a`
     margin: 0px;
-    padding: 5px;
+    padding: 15px;
     cursor: crosshair;
     text-decoration: none;
     text-align: center;
@@ -26,7 +26,7 @@ const NavMenuOptions = (props) => {
   `;
 
   return (
-    <NavOptionsContainer id='navigation-options-container'>
+    <NavOptionsContainer id='navmenu-options-container'>
       {
         contentOptions.map((option, i) => {
           return <NavOption key={i} id={option} onClick={handleNavigation}>{ option }</NavOption>

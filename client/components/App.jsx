@@ -39,7 +39,10 @@ class App extends React.Component {
   }
 
   handleNavigation(e) {
-    this.setState({content: e.target.textContent});
+    this.setState({
+      content: e.target.textContent,
+      menu: false
+    });
   }
 
   handleToggleNav(e) {
@@ -55,7 +58,6 @@ class App extends React.Component {
       .then((resources) => {
         this.setState({
           content: 'home',
-          menu: false,
           display: 'Marlon A. Esparza',
           passage: resources.passage,
           repos: resources.repos,
