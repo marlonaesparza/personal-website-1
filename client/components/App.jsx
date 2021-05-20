@@ -35,10 +35,19 @@ class App extends React.Component {
     };
 
     this.handleNavigation = this.handleNavigation.bind(this);
+    this.handleToggleNav = this.handleToggleNav.bind(this);
   }
 
   handleNavigation(e) {
     this.setState({content: e.target.textContent});
+  }
+
+  handleToggleNav(e) {
+    if (this.state.menu === true) {
+      this.setState({menu: false});
+    } else {
+      this.setState({menu: true});
+    }
   }
 
   componentDidMount() {
@@ -59,6 +68,7 @@ class App extends React.Component {
   render() {
     const {
       content,
+      menu,
       display,
       passage,
       repos,
@@ -74,8 +84,8 @@ class App extends React.Component {
       <AppContainer id='application-container'>
         <Content content={content} display={display} passage={passage} repos={repos} socials={socials} deviceAdjustment={deviceAdjustment} />
         <Navigation contentOptions={contentOptions} deviceAdjustment={deviceAdjustment} handleNavigation={this.handleNavigation} />
-        <NavToggle deviceAdjustment={deviceAdjustment} />
-        <NavMenu deviceAdjustment={deviceAdjustment} />
+        <NavToggle menu={menu} deviceAdjustment={deviceAdjustment} handleToggleNav={this.handleToggleNav} />
+        <NavMenu menu={menu} contentOptions={contentOptions} deviceAdjustment={deviceAdjustment} handleNavigation={this.handleNavigation} />
       </AppContainer>
     );
   }

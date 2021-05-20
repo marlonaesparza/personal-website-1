@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const NavToggle = (props) => {
   const {
+    menu,
     deviceAdjustment
   } = props;
 
@@ -21,19 +22,19 @@ const NavToggle = (props) => {
   `;
 
   const NavToggleButton = styled.span`
-    margin: 0;
+    margin: auto;
     padding: 5px;
     display: block;
+    text-align: center;
+    text-decoration: none;
     color: white;
     cursor: grab;
-    text-decoration: none;
-    text-align: center;
-    transform: rotate(45deg);
+    transform: ${menu === true ? 'rotate(0deg)' : 'rotate(45deg)'};
   `;
 
   return (
     <NavToggleContainer>
-      <NavToggleButton id='toggle-button' role='img' aria-label='toggle-button'>
+      <NavToggleButton id='toggle-button' role='img' aria-label='toggle-button' onClick={props.handleToggleNav} >
         { String.fromCodePoint(10006) }
       </NavToggleButton>
     </NavToggleContainer>
