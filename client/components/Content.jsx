@@ -6,6 +6,24 @@ import About from './subcomponents/About';
 import Projects from './subcomponents/Projects';
 import Connect from './subcomponents/Connect';
 
+const ContentContainer = styled.div`
+  font-family: 'Roboto Mono', monospace;
+  margin: 0px;
+  padding: 5px;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  place-content: center;
+  background: black;
+  border: none;
+
+  @media ${({deviceAdjustment}) => {
+    return deviceAdjustment.tablet;
+  }} {
+    min-height: 80vh;
+  }
+`;
+
 const Content = (props) => {
   const {
     content,
@@ -16,24 +34,10 @@ const Content = (props) => {
     deviceAdjustment
   } = props;
 
-  const ContentContainer = styled.div`
-    font-family: 'Roboto Mono', monospace;
-    margin: 0px;
-    padding: 5px;
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    place-content: center;
-    background: black;
-    border: none;
-
-    @media ${deviceAdjustment.tablet} {
-      min-height: 80vh;
-    }
-  `;
+  
 
   return (
-    <ContentContainer id='content-container'>
+    <ContentContainer id='content-container' deviceAdjustment={deviceAdjustment}>
       {
         content === 'home' ? <Home display={display} deviceAdjustment={deviceAdjustment} /> : 
         content === 'about' ? <About passage={passage} deviceAdjustment={deviceAdjustment} /> :
@@ -43,5 +47,6 @@ const Content = (props) => {
     </ContentContainer>
   );
 };
+
 
 export default Content;

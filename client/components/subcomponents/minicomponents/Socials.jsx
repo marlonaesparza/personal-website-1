@@ -3,13 +3,15 @@ import styled from 'styled-components';
 
 import Social from './microcomponents/Social';
 
+
+const SocialsContainer = styled.div`
+  margin: 0px;
+  padding: 5px;
+
+  `;
+
 const Socials = (props) => {
   const { socials } = props;
-
-  const SocialsContainer = styled.div`
-    margin: 0px;
-    padding: 5px;
-  `;
 
   return (
     <SocialsContainer>

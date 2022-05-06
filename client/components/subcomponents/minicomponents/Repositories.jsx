@@ -3,13 +3,15 @@ import styled from 'styled-components';
 
 import Repo from './microcomponents/Repo';
 
+
+const ReposContainer = styled.div`
+  margin: 0px;
+  padding: 5px;
+`;
+
+
 const Repositories = (props) => {
   const { repos } = props;
-
-  const ReposContainer = styled.div`
-    margin: 0px;
-    padding: 5px;
-  `;
 
   return (
     <ReposContainer id='repos-container'>
@@ -21,5 +23,6 @@ const Repositories = (props) => {
     </ReposContainer>
   )
 };
+
 
 export default Repositories;

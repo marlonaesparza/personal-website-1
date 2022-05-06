@@ -1,7 +1,7 @@
 module.exports = [
   {
     network: 'twitter',
-    url: 'https://twitter.com/marlonaesparza_',
+    url: 'https://twitter.com/10v3h473n30n',
     icon: '128037'
   },
   {
@@ -10,8 +10,8 @@ module.exports = [
     icon: '128223'
   },
   {
-    network: 'write.as',
-    url: 'https://write.as/marlonaesparza/',
+    network: 'dev.to',
+    url: 'https://dev.to/marlonaesparza',
     icon: '9997'
   }
 ];

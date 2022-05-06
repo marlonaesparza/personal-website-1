@@ -1,21 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
 
+
+const PassageContainer = styled.div`
+  margin: 0px;
+  padding: 5px;
+`;
+
+const PassageEl = styled.p`
+  margin: 10px 10px;
+  padding: 5px;
+  text-align: center;
+  color: white;
+`;
+
+
 const Passage = (props) => {
   const { passage } = props;
-
-  const PassageContainer = styled.div`
-    margin: 0px;
-    padding: 5px;
-  `;
-
-  const Passage = styled.p`
-    margin: 10px 10px;
-    padding: 5px;
-    text-align: center;
-    color: white;
-  `;
-
+  
    return (
     <PassageContainer id='passage-container'>
       {
@@ -24,11 +26,11 @@ const Passage = (props) => {
             return;
           };
 
-          return <Passage key={i}>{paragraph}</Passage>;
+          return <PassageEl key={i}>{paragraph}</PassageEl>;
         })
       }
       <br/>
-      <Passage key={passage.length - 1}>{passage[passage.length - 1 ]}</Passage>
+      <PassageEl key={passage.length - 1}>{passage[passage.length - 1 ]}</PassageEl>
       <br/>
     </PassageContainer>
   );
