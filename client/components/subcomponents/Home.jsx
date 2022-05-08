@@ -16,6 +16,7 @@ const HomeContainer = styled.div`
   border-radius: 3px;
   box-shadow: rgba(255, 17, 26, 0.3) 0px 8px 24px, rgba(255, 17, 26, 0.3) 0px 16px 56px, rgba(255, 17, 26, 0.3) 0px 24px 80px;
   font-size: 2vw;
+  overflow: hidden;
 
   @media ${({deviceAdjustment}) => deviceAdjustment.tablet} {
     max-height: 60vh;

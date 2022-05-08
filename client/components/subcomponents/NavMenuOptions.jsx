@@ -8,6 +8,7 @@ const NavOptionsContainer = styled.div`
   display: grid;
   grid-template-rows: repeat(${({contentOptions}) => contentOptions.length}, 1fr);
   place-content: center;
+  z-index: 1;
 `;
 
 const NavOption = styled.a`

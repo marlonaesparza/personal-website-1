@@ -58,7 +58,7 @@ class App extends React.Component {
       .then((resources) => {
         this.setState({
           content: 'home',
-          display: 'Marlon A. Esparza',
+          display: 'MARLON',
           passage: resources.passage,
           repos: resources.repos,
           socials: resources.socials,

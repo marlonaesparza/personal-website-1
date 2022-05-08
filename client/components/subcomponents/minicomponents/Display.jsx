@@ -5,6 +5,7 @@ import styled from 'styled-components';
 const DisplayContainer = styled.div`
   margin: 0px;
   padding: 5px;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   place-content: center;
@@ -14,8 +15,23 @@ const DisplayContainer = styled.div`
 const DisplayEl = styled.h1`
   margin: 0px;
   padding: 5px;
+  font-family: 'Press Start 2P', cursive;
   text-align: center;
-  color: white;
+  font-size: 15em;
+  color: rgba(255, 17, 26, .6);
+  z-index: 0;
+  
+  animation: slide linear 9s infinite;
+
+  @keyframes slide {
+    from {
+      transform: translateX(85%);
+    }
+
+    to {
+      transform: translateX(-70%);
+    }
+  }
 `;
 
 
